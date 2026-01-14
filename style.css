@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: #3b82f6;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #3b82f6;
+    border-bottom: 3px solid #3b82f6;
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #3b82f6;
+        border-bottom: 3px solid #3b82f6;
+        border-bottom-left-radius: 2rem;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #3b82f6;
+    }
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* ================= HOME ================= */
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #3b82f6;
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    width: 30vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #3b82f6;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.home-img img:hover{
+    transform: scale(1.03);
+}
+
+/* ================= SOCIAL ================= */
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #3b82f6;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #3b82f6;
+}
+
+.social-icons a:hover{
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #3b82f6;
+    box-shadow: 0  0 25px #3b82f6;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #3b82f6;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #3b82f6;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    background-color: #3b82f6;
+    color: black;
+    box-shadow: 0 0 25px #3b82f6;
+}
+
+/* ================= TYPING ================= */
+
+.typing-text{
+    font-size: 3.4rem;
+    font-weight: 600;
+}
+
+.typing-text span{
+    position: relative;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+/* Text changing */
+.typing-text span::before{
+    content: "Software Tester";
+    color: #3b82f6;
+    animation: words 12s infinite;
+}
+
+/* Cursor */
+
+    
+
+
+@keyframes blink {
+    0%,50%,100% { opacity: 1; }
+    25%,75% { opacity: 0; }
+}
+
+@keyframes words{
+    0%, 25%   { content: "Software Tester"; }
+    26%, 50%  { content: "Data Analyst"; }
+    51%, 75%  { content: "Frontend Developer"; }
+    76%, 100% { content: "Video Editor"; }
+}
+
+/* ================= RESPONSIVE HOME ================= */
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+/* ================= CONTACT PAGE ================= */
+
+.contact-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.contact-details {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    padding: 4rem 4.5rem;
+    max-width: 520px;
+    width: 100%;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.25);
+    transition: 0.4s ease;
+}
+
+.contact-details:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.45);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.6rem 2rem;
+    border-radius: 1.4rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    transition: 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: scale(1.03);
+    border-color: #3b82f6;
+}
+
+.contact-item i {
+    font-size: 2.4rem;
+    color: #3b82f6;
+    min-width: 30px;
+}
+
+.contact-item span {
+    flex: 1;
+    font-size: 1.7rem;
+}
+
+.contact-btn {
+    padding: 0.7rem 2rem;
+    border-radius: 3rem;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: black;
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.contact-btn:hover {
+    transform: scale(1.1);
+    background: white;
+    color: #3b82f6;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.9);
+}
+
+/* ================= EDUCATION ================= */
+
+.education-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+}
+
+.education-page h1 {
+    text-align: center;
+    font-size: 4.5rem;
+    color: #3b82f6;
+}
+
+.education-page p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 6rem;
+}
+
+.education-timeline {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.edu-card {
+    display: flex;
+    gap: 2.5rem;
+    background: rgba(255,255,255,0.05);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+    transition: 0.4s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 0 45px rgba(59, 130, 246, 0.4);
+}
+
+.edu-icon {
+    min-width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: black;
+}
+
+.edu-content h3 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.edu-content span {
+    font-size: 1.4rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.edu-content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+@media(max-width: 700px) {
+    .edu-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ================= CERTIFICATE ================= */
+
+.certificate-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+}
+
+.certificate-page h1 {
+    text-align: center;
+    font-size: 4.5rem;
+    color: #3b82f6;
+}
+
+.certificate-page p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 6rem;
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.certificate-card {
+    background: rgba(255,255,255,0.05);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.certificate-card i {
+    font-size: 4rem;
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+}
+
+.certificate-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-card span {
+    font-size: 1.4rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.certificate-card p {
+    font-size: 1.5rem;
+    margin-top: 1.2rem;
+}
+/* ===== CONTACT TITLE STYLING ===== */
+
+.contact-page h1 {
+    font-size: 5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 25px rgba(59,130,246,0.4);
+}
+
+.contact-page p {
+    text-align: center;
+    font-size: 1.9rem;
+    color: #dbeafe;
+    opacity: 0.9;
+    margin-bottom: 6rem;
+}
+
+/* Small glow animation (optional but nice) */
+.contact-page h1:hover {
+    text-shadow: 0 0 40px rgba(59,130,246,0.7);
+    transform: scale(1.02);
+    transition: 0.3s ease;
+}
+/* ================= */
+/* SKILLS PAGE */
+/* ================= */
+
+.skills-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+}
+
+.skills-page h1 {
+    text-align: center;
+    font-size: 4.5rem;
+    color: #3b82f6;
+}
+
+.skills-page p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 6rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.05);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(59,130,246,0.3);
+    box-shadow: 0 0 25px rgba(59,130,246,0.15);
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 40px rgba(59,130,246,0.4);
+}
+
+.skill-card i {
+    font-size: 3.8rem;
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+}
+
+.skill-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card ul {
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+.skill-card ul li {
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+/* ================= */
+/* LANGUAGE SKILLS */
+/* ================= */
+
+.lang-skill {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.lang-skill span {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #1f2933;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    animation: loadBar 1.5s ease-in-out forwards;
+}
+
+/* Percentages */
+.english { width: 90%; }
+.malayalam { width: 100%; }
+.hindi { width: 50%; }
+
+@keyframes loadBar {
+    from { width: 0; }
+}
+/* ================= */
+/* EXPERIENCE PAGE */
+/* ================= */
+
+.experience-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+}
+
+.experience-page h1 {
+    text-align: center;
+    font-size: 4.5rem;
+    color: #3b82f6;
+}
+
+.experience-page p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 6rem;
+}
+
+.experience-timeline {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.exp-card {
+    display: flex;
+    gap: 2.5rem;
+    background: rgba(255,255,255,0.05);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(59,130,246,0.3);
+    box-shadow: 0 0 25px rgba(59,130,246,0.15);
+    transition: 0.4s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 0 45px rgba(59,130,246,0.4);
+}
+
+.exp-icon {
+    min-width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: black;
+}
+
+.exp-content h3 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp-content span {
+    font-size: 1.4rem;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.exp-content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+.exp-content ul {
+    margin-top: 1.2rem;
+    padding-left: 2rem;
+    font-size: 1.5rem;
+}
+
+.exp-content ul li {
+    margin-bottom: 0.6rem;
+}
+
+@media(max-width: 700px) {
+    .exp-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .exp-content ul {
+        padding-left: 0;
+        list-style: none;
+    }
+}
+/* ================= */
+/* SERVICES PAGE */
+/* ================= */
+
+.services-page {
+    min-height: 100vh;
+    padding: 12rem 9% 5rem;
+}
+
+.services-page h1 {
+    text-align: center;
+    font-size: 4.5rem;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.services-page p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 6rem;
+    color: #dbeafe;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 3rem;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.05);
+    padding: 3.5rem 3rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(59,130,246,0.3);
+    box-shadow: 0 0 25px rgba(59,130,246,0.15);
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 45px rgba(59,130,246,0.45);
+}
+
+.service-card i {
+    font-size: 4rem;
+    color: #3b82f6;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
